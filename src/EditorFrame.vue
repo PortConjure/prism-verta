@@ -4,15 +4,14 @@
     <div id="app-editor-window">
       <router-view></router-view>
     </div>
+    <editor-feed id="app-footer"></editor-feed>
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
 import EditorHeader from './Editor/EditorHeader';
+import EditorFeed from './Editor/EditorFeed';
 
 export default {
-  components: { EditorHeader }
+  components: { EditorHeader, EditorFeed }
 }
 </script>

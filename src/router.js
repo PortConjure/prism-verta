@@ -14,7 +14,7 @@ const routes = [
       { path: 'publish', component: EditorPublish },
       { path: 'edit', component: EditorEdit },
       { path: 'upload', component: EditorUpload },
-      { path: '**', redirect: 'upload' },
+      { path: '', redirect: 'upload' },
     ]
   },
   { path: '', component: HomePage },

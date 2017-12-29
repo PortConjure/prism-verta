@@ -13,6 +13,8 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700');
 
+* { box-sizing: border-box; }
+
 html, body {
   background-color: #222;
   color: lighten(#2c3e50, 40%);
@@ -26,8 +28,10 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2 {
+h1, h2, p {
   font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -41,6 +45,31 @@ li {
 }
 
 a {
-  color: lighten(#1e1bdb, 20%);
+  color: lighten(#1e1bdb, 40%);
+}
+
+.verta-content-padding {
+  display: block;
+  padding: 20px 5vw;
+}
+
+.verta-text-helptext {
+  font-size: 12px;
+  color: lighten(#2c3e50, 30%);
+}
+
+.verta-text-modal-blocking {
+  display: block;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  p {
+    @extend .verta-text-helptext;
+    margin: 5px 0;
+  }
 }
 </style>
