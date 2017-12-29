@@ -11,9 +11,9 @@ const routes = [
     path: '/editor',
     component: EditorFrame,
     children: [
-      { path: 'publish', component: EditorPublish },
-      { path: 'edit', component: EditorEdit },
-      { path: 'upload', component: EditorUpload },
+      { name: 'EditorPublish', path: 'publish', component: EditorPublish },
+      { name: 'EditorEdit', path: 'edit', component: EditorEdit },
+      { name: 'EditorUpload', path: 'upload', component: EditorUpload },
       { path: '', redirect: 'upload' },
     ]
   },

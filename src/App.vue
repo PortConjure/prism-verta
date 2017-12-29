@@ -72,4 +72,22 @@ a {
     margin: 5px 0;
   }
 }
+
+.scale-outwards-enter-active, .scale-outwards-leave-active,
+.scale-inwards-enter-active, .scale-inwards-leave-active {
+  transition: 300ms ease;
+}
+
+.scale-outwards-enter,
+.scale-inwards-leave-to {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.scale-outwards-leave-to,
+.scale-inwards-enter, {
+  transform: scale(1.1);
+  opacity: 0;
+}
+
 </style>
