@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app-editor">
     <editor-header id="app-header"></editor-header>
     <div id="app-editor-window" style="overflow: hidden;">
       <transition :name="editorTransition" mode="out-in">
@@ -11,6 +11,13 @@
 </template>
 <style lang="scss">
 
+#app-editor {
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 </style>
 <script>
 import EditorHeader from './Editor/EditorHeader';
@@ -19,7 +26,9 @@ import EditorFeed from './Editor/EditorFeed';
 export default {
   components: { EditorHeader, EditorFeed },
   data() {
-    editorTransition: 'scale-outwards'
+    return {
+      editorTransition: 'scale-outwards'
+    };
   },
   methods: {
     convertPathToValue(name) {

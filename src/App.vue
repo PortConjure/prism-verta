@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition name="scale-outwards" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -30,8 +32,6 @@ html, body {
 
 h1, h2, p {
   font-weight: normal;
-  margin: 0;
-  padding: 0;
 }
 
 ul {
@@ -69,12 +69,46 @@ a {
 
   span {
     display: block;
-    margin: 5px 0;
+    margin: 5px 0 !important;
   }
 
   p {
     @extend .verta-text-helptext;
-    margin: 5px 0;
+    margin: 5px 0 !important;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid lighten(#2c3e50, 60%);
+  color: lighten(#2c3e50, 60%);
+  cursor: pointer;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  padding: 10px 40px;
+  position: relative;
+  outline: none;
+  text-transform: uppercase;
+  transition: 150ms ease;
+  z-index: 1;
+
+  &:before {
+    background-color: lighten(#2c3e50, 60%);
+    content: '';
+    height: 100%;
+    width: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 150ms ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: darken(#2c3e50, 10%);
+    &:before {
+      width: 95%;
+    }
   }
 }
 
