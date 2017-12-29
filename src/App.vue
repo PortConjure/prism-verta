@@ -67,6 +67,11 @@ a {
     font-weight: 600;
   }
 
+  span {
+    display: block;
+    margin: 5px 0;
+  }
+
   p {
     @extend .verta-text-helptext;
     margin: 5px 0;
