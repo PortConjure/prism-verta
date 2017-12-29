@@ -50,7 +50,7 @@ a {
 
 .verta-content-padding {
   display: block;
-  padding: 20px 5vw;
+  padding: 30px 5vw;
 }
 
 .verta-text-helptext {

@@ -3,7 +3,9 @@
     <editor-header id="app-header"></editor-header>
     <div id="app-editor-window" style="overflow: hidden;">
       <transition :name="editorTransition" mode="out-in">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </transition>
     </div>
     <editor-feed id="app-footer"></editor-feed>
