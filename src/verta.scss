@@ -16,6 +16,8 @@ html, body {
 }
 
 h1, h2, p {
+  margin: 0;
+  padding: 0;
   font-weight: normal;
 }
 
@@ -63,6 +65,16 @@ a {
   }
 }
 
+.verta-text-button {
+  color: rgba(255, 255, 255, .4);
+  cursor: pointer;
+  font-size: 12px;
+
+  &:hover {
+    color: rgba(255, 255, 255, .6);
+  }
+}
+
 button {
   background-color: transparent;
   border: 1px solid lighten(#2c3e50, 60%);
@@ -94,6 +106,102 @@ button {
     &:before {
       width: 95%;
     }
+  }
+
+  &:disabled {
+    color: lighten(#2c3e50, 60%);
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:before { width: 5%; }
+  }
+}
+
+.verta-alert-base {
+  background-color: rgba(lighten(#2c3e50, 10%), .2);
+  border: 1px solid lighten(#2c3e50, 60%);
+  border-radius: 4px;
+  margin: 5px 0;
+  padding: 12px 15px;
+
+  h5 {
+    margin: 0;
+  }
+
+  p {
+    margin-top: 4px;
+  }
+}
+
+.verta-alert-error {
+  @extend .verta-alert-base;
+  background-color: rgba(lighten(#502c32, 10%), .2);
+  border: 1px solid lighten(#502c32, 60%);
+  color: lighten(#502c32, 60%);
+}
+
+.verta-alert-file {
+  @extend .verta-alert-base;
+  padding: 0;
+  overflow: hidden;
+
+  .verta-alert-content {
+    padding: 12px 15px;
+  }
+}
+
+.verta-flex-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  & > * {
+    min-width: 280px;
+    margin: 5px;
+  }
+}
+
+.verta-flex-hgallery {
+  @extend .verta-flex-gallery;
+  flex-wrap: nowrap;
+
+  & > * {
+    min-width: auto;
+    height: 120px;
+  }
+}
+
+.verta-ui-imagebox {
+  background-color: rgba(0, 0, 0, .2);
+  cursor: default;
+  width: 100%;
+  min-height: 120px;
+  margin: 0px auto;
+  padding: 40px 0;
+  font-size: 36px;
+  font-weight: 600;
+  color: rgba(lighten(#2c3e50, 40%), .4);
+  text-align: center;
+}
+
+.verta-alert-filesmall {
+  @extend .verta-alert-file;
+  border: 2px solid rgba(lighten(#2c3e50, 40%), .1);
+
+  .verta-ui-imagebox {
+    min-height: auto;
+    height: 90px;
+    padding: 20px 0;
+  }
+
+  .verta-alert-content {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+
+  &.selected {
+    background-color: rgba(lighten(#2c3e50, 10%), .4);
+    border-color: rgba(lighten(#2c3e50, 40%), .4);
   }
 }
 

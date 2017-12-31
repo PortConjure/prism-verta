@@ -11,16 +11,6 @@
     <editor-feed id="app-footer"></editor-feed>
   </div>
 </template>
-<style lang="scss">
-
-#app-editor {
-  h1, h2, p {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-</style>
 <script>
 import EditorHeader from './Editor/EditorHeader';
 import EditorFeed from './Editor/EditorFeed';
