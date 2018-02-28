@@ -1,4 +1,5 @@
-# prism-verta
+# Prism Verta
+#### NOTE! Prism Verta is no longer maintained as of February 2018. For raw image editing on a browser, consider the [rawson.js](https://github.com/fbuchinger/rawson.js) project.
 
 > Experimental image editor. Spin-off of the Prism Project.
 

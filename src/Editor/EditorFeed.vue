@@ -6,7 +6,7 @@
         <h2>Uploaded Images</h2>
         <p>Click on one to select it.</p>
       </div>
-      <div class="verta-flex-hgallery" style="padding-left: 20px;">
+      <div class="verta-flex-hgallery" style="padding: 0 20px;">
         <div class="verta-alert-filesmall" 
           v-for="(image, index) in feedImages" :key="index" 
           :class="{ selected: selectedImageIndex == index }"
@@ -33,7 +33,6 @@ export default {
   },
   created() {
     Bus.$on('editor-feed-open', () => {
-      console.log('hi');
       this.isOpen = true;
     });
   },
@@ -99,8 +98,10 @@ export default {
     }
 
     .verta-flex-hgallery {
+      overflow-x: scroll;
       .verta-alert-filesmall {
         cursor: pointer;
+        min-width: 150px;
         .verta-ui-imagebox { cursor: pointer; }
       }
     }

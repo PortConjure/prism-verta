@@ -4,6 +4,8 @@
 // props for storing the loading progress.
 //
 
+import { UploadBlobMessenger } from './BridgeMessenger';
+
 export class VertaFile {
   constructor(file) {
     // File Properties
@@ -11,6 +13,7 @@ export class VertaFile {
     this._size = file.size;
     this.name = file.name;
     this.lastModified = file.lastModified;
+    this._objURL = URL.createObjectURL(file);
 
     // Publishing Properties
     this.title = '';
@@ -18,6 +21,7 @@ export class VertaFile {
     this.tags = '';
 
     // Progress Properties
+    this.messenger = new UploadBlobMessenger(file);
     this.uploading = false;
     this.progress = 0;
     this.error = null;
@@ -40,6 +44,7 @@ export class VertaFile {
     // simulate upload
     return new Promise((resolve, reject) => {
       this.uploading = true;
+      this.messenger.sendMessage();
       let interval = setInterval(() => {
         this.progress += 100 * Math.random() / (this._size / Math.pow(1024, 2));
         this.progress = this.progress >= 100 ? 100 : Math.round(this.progress);

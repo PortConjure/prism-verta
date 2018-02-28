@@ -40,7 +40,7 @@
       <div class="verta-flex-gallery">
         <div class="verta-alert-file" v-for="(file, index) in files" :key="index">
           <div class="verta-ui-imagebox">{{file.loadingProgress}}</div>
-          <div class="verta-alert-content"><h5>{{file.name}} (<small>{{file.size}}</small>)</h5></div>
+          <div class="verta-alert-content"><h5>{{file.name}} (<small>{{file.size}}</small>)</h5><small>{{file._objURL}}</small></div>
         </div>
       </div>
       <span class="verta-text-button" @click="clearFiles" style="display: inline-block; margin: 5px 0;">CLEAR ALL</span>
